@@ -29,7 +29,7 @@
   box.querySelector('[data-kx-max]').addEventListener('click', () => { box.classList.remove('is-min'); store.set('kx-min', ''); });
 
   // Canlı önizleme: geliştirme sunucusundaki sürüm dosyası değişince sayfayı aynı kaydırma konumunda yeniler.
-  // Sürüm dosyası yoksa (gerçek yayında) ilk denemede durur.
+  // Yalnızca yerel ağda çalışır; yayındaki sitede hiç istek atmaz.
   const posKey = 'kx-pos:' + location.pathname;
   const saved = store.get(posKey);
   if (saved) { store.set(posKey, ''); addEventListener('load', () => scrollTo(0, +saved)); }
@@ -38,5 +38,6 @@
     if (ver !== null && v !== ver) { store.set(posKey, String(scrollY)); location.reload(); return; }
     ver = v; setTimeout(poll, 1000);
   }).catch(() => {});
-  if (location.protocol.startsWith('http') && !store.get('kx-noreload')) poll();
+  const local = /^(localhost|127\.|10\.|192\.168\.|172\.(1[6-9]|2\d|3[01])\.)/.test(location.hostname);
+  if (location.protocol.startsWith('http') && local && !store.get('kx-noreload')) poll();
 })();
