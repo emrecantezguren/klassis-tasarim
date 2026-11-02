@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Klassis — Web Sitesi Tasarım Önerileri</title>
+<meta name="description" content="Klassis yeni web sitesi için hazırlanan tasarım önerileri; sayfa ve bölüm bazında karşılaştırma.">
+<link rel="icon" href="gorseller/favicon.png">
+<style>
+:root{--bg:#F4F3F0;--card:#fff;--ink:#141414;--ink2:#4A4A46;--muted:#86837C;--line:#E2E0DA;--red:#E30613}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:1320px;margin:0 auto;padding:0 clamp(16px,4vw,48px)}
+header{padding:clamp(36px,6vw,80px) 0 clamp(28px,4vw,48px)}
+.top{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:clamp(32px,5vw,64px)}
+.top img{height:34px;width:auto}
+.top span{font-size:13px;color:var(--muted)}
+h1{font-size:clamp(34px,5vw,64px);line-height:1.02;letter-spacing:-.03em;font-weight:650;margin:0 0 18px;max-width:18ch}
+.intro{font-size:clamp(17px,1.4vw,20px);color:var(--ink2);max-width:62ch;margin:0}
+.how{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:32px}
+.how div{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px 18px;font-size:14.5px;color:var(--ink2)}
+.how b{display:block;color:var(--ink);font-size:15px;margin-bottom:4px}
+.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;padding-bottom:clamp(40px,5vw,72px)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.card.is-wait{opacity:.7}
+.card--alt{border-color:var(--ink)}
+.no--alt{background:var(--red)}
+.shot{display:block;aspect-ratio:1200/563;background:#ddd;overflow:hidden;border-bottom:1px solid var(--line)}
+.shot img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s}
+.shot:hover img{transform:scale(1.03)}
+.shot--wait{display:grid;place-items:center;background:repeating-linear-gradient(135deg,#ECEAE5 0 12px,#E4E1DB 12px 24px);color:var(--muted);font-size:14px}
+.card__body{padding:20px 22px 22px;display:flex;flex-direction:column;gap:10px;flex:1}
+.card__head{display:flex;align-items:center;gap:12px}
+.no{font:600 12px/1 ui-monospace,Menlo,monospace;background:var(--ink);color:#fff;padding:5px 7px;border-radius:5px}
+.card h2{margin:0;font-size:21px;letter-spacing:-.01em;flex:1}
+.sw{display:flex}
+.sw i{width:18px;height:18px;border-radius:50%;border:2px solid #fff;margin-left:-6px;box-shadow:0 0 0 1px var(--line)}
+.card p{margin:0;color:var(--ink2);font-size:15px}
+.card p.meta{font-size:13px;color:var(--muted)}
+.btn{display:inline-flex;align-self:flex-start;margin-top:6px;background:var(--ink);color:#fff;text-decoration:none;padding:11px 16px;border-radius:8px;font-weight:600;font-size:14.5px}
+.btn:hover{background:var(--red)}
+.links{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding-top:10px}
+.links a{font-size:12.5px;text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:4px 10px;color:var(--ink2)}
+.links a:hover{border-color:var(--ink);color:var(--ink)}
+section.cmp{padding-bottom:clamp(40px,5vw,72px)}
+section.cmp h2{font-size:clamp(24px,2.4vw,32px);letter-spacing:-.02em;margin:0 0 6px}
+section.cmp > .wrap > p{margin:0 0 20px;color:var(--ink2);max-width:70ch}
+.tbl{overflow-x:auto;background:var(--card);border:1px solid var(--line);border-radius:12px}
+table{width:100%;border-collapse:collapse;font-size:14.5px;min-width:1040px}
+th,td{text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid var(--line)}
+thead th{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:600;background:#FAFAF8}
+tbody th{font-weight:600;white-space:nowrap}
+tbody th .no{margin-right:10px}
+td{color:var(--ink2)}
+td.wait{color:var(--muted)}
+td.go{white-space:nowrap}
+td.go a{display:inline-block;font:600 12px/1 ui-monospace,Menlo,monospace;text-decoration:none;border:1px solid var(--line);border-radius:6px;padding:6px 8px;margin-right:4px}
+td.go a:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+tbody tr:last-child th,tbody tr:last-child td{border-bottom:0}
+footer{padding:28px 0 48px;color:var(--muted);font-size:13px}
+@media (max-width:980px){.cards,.how{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <div class="top"><img src="gorseller/logo-klassis.png" alt="Klassis"><span>Hazırlayan: Nex Yazılım · Ekim 2026</span></div>
+  <h1>Yeni web sitesi için tasarım önerileri</h1>
+  <p class="intro">Üç tasarım önerisi ve bir alternatif tasarım; hepsi klassis.com'daki gerçek içerikle hazırlandı: 203 ürün, 18 ürün grubu, 15 marka, 30 proje ve tüm blog yazıları. Sayfa adresleri ve ana sayfa bölümleri her öneride aynı. Böylece bir öneriyi olduğu gibi seçebilir ya da bölümleri öneriler arasında karıştırabilirsiniz.</p>
+  <div class="how">
+    <div><b>1. Gezin</b>Her öneri tıklanabilir, çalışan bir site. Menüler, filtreler, renk seçimi, arama ve teklif formu çalışıyor.</div>
+    <div><b>2. Karşılaştırın</b>Her sayfanın sol altındaki <b style="display:inline">01 · 02 · 03</b> ve <b style="display:inline">Alternatif</b> düğmeleri, aynı sayfayı diğer öneride açar.</div>
+    <div><b>3. Karıştırın</b>Ana sayfada <b style="display:inline">Bölümler</b> düğmesi numaraları gösterir. "Giriş 02, Ürün grupları 01" gibi seçim yapabilirsiniz.</div>
+  </div>
+</div></header>
+<main>
+  <div class="wrap cards"><article class="card">
+  <a class="shot" href="tasarim-1/index.html"><img src="ortak/onizleme-1.jpg" alt="Tasarım 1 ana sayfa önizlemesi"></a>
+  <div class="card__body">
+    <div class="card__head"><span class="no">01</span><h2>Editoryal</h2><span class="sw"><i style="background:#F3F0EA"></i><i style="background:#151513"></i><i style="background:#E30613"></i><i style="background:#E9E5DC"></i></span></div>
+    <p>Açık kâğıt tonu, bol beyaz alan ve italik serif vurgular. B&amp;T Design ve Modulyss gibi sakin, katalog hissi veren bir dil; fotoğraflar ön planda.</p>
+    <p class="meta">Yazı tipleri: Instrument Sans + Instrument Serif</p>
+    <a class="btn" href="tasarim-1/index.html">Tasarım 01'i aç →</a>
+    <nav class="links" aria-label="Tasarım 1 sayfaları"><a href="tasarim-1/index.html">Ana sayfa</a><a href="tasarim-1/kategori/karo-hali.html">Ürün grubu</a><a href="tasarim-1/urun/composure.html">Ürün</a><a href="tasarim-1/proje/brown-forman.html">Proje</a><a href="tasarim-1/marka/interface.html">Marka</a><a href="tasarim-1/blog/karo-hali-mi-lvt-mi.html">Rehber yazısı</a><a href="tasarim-1/teklif.html">Teklif</a></nav>
+  </div>
+</article><article class="card">
+  <a class="shot" href="tasarim-2/index.html"><img src="ortak/onizleme-2.jpg" alt="Tasarım 2 ana sayfa önizlemesi"></a>
+  <div class="card__body">
+    <div class="card__head"><span class="no">02</span><h2>Mimari / Koyu</h2><span class="sw"><i style="background:#121211"></i><i style="background:#E6E0D3"></i><i style="background:#E30613"></i><i style="background:#F1EDE5"></i></span></div>
+    <p>Koyu grafit ve kemik tonu, geniş büyük harfli başlıklar, teknik etiketler. Bolon ve Ege&#x27;nin cesur, mimari diline yakın; malzeme dokuları öne çıkar.</p>
+    <p class="meta">Yazı tipleri: Archivo (geniş) + IBM Plex Mono</p>
+    <a class="btn" href="tasarim-2/index.html">Tasarım 02'i aç →</a>
+    <nav class="links" aria-label="Tasarım 2 sayfaları"><a href="tasarim-2/index.html">Ana sayfa</a><a href="tasarim-2/kategori/karo-hali.html">Ürün grubu</a><a href="tasarim-2/urun/composure.html">Ürün</a><a href="tasarim-2/proje/brown-forman.html">Proje</a><a href="tasarim-2/marka/interface.html">Marka</a><a href="tasarim-2/blog/karo-hali-mi-lvt-mi.html">Rehber yazısı</a><a href="tasarim-2/teklif.html">Teklif</a></nav>
+  </div>
+</article><article class="card">
+  <a class="shot" href="tasarim-3/index.html"><img src="ortak/onizleme-3.jpg" alt="Tasarım 3 ana sayfa önizlemesi"></a>
+  <div class="card__body">
+    <div class="card__head"><span class="no">03</span><h2>Renkli / Yumuşak</h2><span class="sw"><i style="background:#FFFFFF"></i><i style="background:#C8552D"></i><i style="background:#43553A"></i><i style="background:#F2ECE1"></i></span></div>
+    <p>Beyaz zemin üzerinde malzeme renkleri (kil, yosun, arduvaz, kum), büyük yuvarlatılmış kartlar ve yüzen ada menü. Modulyss ve Ege&#x27;nin sıcak, katalog hissine yakın.</p>
+    <p class="meta">Yazı tipleri: Bricolage Grotesque</p>
+    <a class="btn" href="tasarim-3/index.html">Tasarım 03'i aç →</a>
+    <nav class="links" aria-label="Tasarım 3 sayfaları"><a href="tasarim-3/index.html">Ana sayfa</a><a href="tasarim-3/kategori/karo-hali.html">Ürün grubu</a><a href="tasarim-3/urun/composure.html">Ürün</a><a href="tasarim-3/proje/brown-forman.html">Proje</a><a href="tasarim-3/marka/interface.html">Marka</a><a href="tasarim-3/blog/karo-hali-mi-lvt-mi.html">Rehber yazısı</a><a href="tasarim-3/teklif.html">Teklif</a></nav>
+  </div>
+</article><article class="card card--alt">
+  <a class="shot" href="tasarim-4/index.html"><img src="ortak/onizleme-4.jpg" alt="Tasarım 4 ana sayfa önizlemesi"></a>
+  <div class="card__body">
+    <div class="card__head"><span class="no no--alt">Alternatif</span><h2>Premium / Görsel</h2><span class="sw"><i style="background:#FFFFFF"></i><i style="background:#F5F5F7"></i><i style="background:#1D1D1F"></i><i style="background:#E30613"></i></span></div>
+    <p>Üç öneriye ek olarak hazırlanan alternatif yön. Tam ekran giriş slaydı, büyük fotoğraflar ve az metin; beyaz ve açık gri zemin, şeffaf menü. İkon, sayaç ve animasyon en aza indirildi; referans sitelerin görsel ağırlıklı, sade dili.</p>
+    <p class="meta">Yazı tipleri: Inter Tight + Inter</p>
+    <a class="btn" href="tasarim-4/index.html">Alternatif tasarımı aç →</a>
+    <nav class="links" aria-label="Tasarım 4 sayfaları"><a href="tasarim-4/index.html">Ana sayfa</a><a href="tasarim-4/kategori/karo-hali.html">Ürün grubu</a><a href="tasarim-4/urun/composure.html">Ürün</a><a href="tasarim-4/proje/brown-forman.html">Proje</a><a href="tasarim-4/marka/interface.html">Marka</a><a href="tasarim-4/blog/karo-hali-mi-lvt-mi.html">Rehber yazısı</a><a href="tasarim-4/teklif.html">Teklif</a></nav>
+  </div>
+</article></div>
+  <section class="cmp"><div class="wrap">
+    <h2>Ana sayfa bölümleri</h2>
+    <p>Bölüm numaraları her öneride aynıdır. Beğendiğiniz bölümleri numarasıyla belirtmeniz yeterli.</p>
+    <div class="tbl"><table><thead><tr><th>Bölüm</th><th>Tasarım 01 · Editoryal</th><th>Tasarım 02 · Mimari / Koyu</th><th>Tasarım 03 · Renkli / Yumuşak</th><th>Alternatif · Premium / Görsel</th><th>Aç</th></tr></thead><tbody><tr><th><span class="no">01</span>Üst menü</th><td>Üst bilgi şeridi (telefon, WhatsApp, showroom) + ortada açılır menüler; giriş görselinin üstünde şeffaf.</td><td>Tek satırlık koyu bar: solda Menü düğmesi, ortada Ofis / Zemin geçişi, sağda kırmızı Teklif Al; tam ekran menü.</td><td>Sayfanın üstünde yüzen yuvarlak menü adası; görselli açılır menüler, kil rengi Teklif Al.</td><td>İnce, şeffaf menü; kaydırınca buzlu cam. Açılır menülerde kategori fotoğrafları.</td><td class="go"><a href="tasarim-1/index.html">01</a><a href="tasarim-2/index.html">02</a><a href="tasarim-3/index.html">03</a><a href="tasarim-4/index.html">Alt.</a></td></tr><tr><th><span class="no">02</span>Giriş</th><td>Üç slaytlı tam ekran fotoğraf; büyük başlık, iki buton ve ilerleme çubukları.</td><td>İkiye bölünmüş ekran: Ofis ve Zemin yan yana, üzerine gelinen taraf genişler; altında kayan marka şeridi.</td><td>Bento ızgara: başlık kutusu, büyük proje görseli, ofis (dekupe sandalye) ve zemin (renk örnekleri) kutuları.</td><td>Beş fotoğraflı tam ekran slayt; tek başlık, tek cümle, iki düğme, ince ilerleme çizgileri.</td><td class="go"><a href="tasarim-1/index.html">01</a><a href="tasarim-2/index.html">02</a><a href="tasarim-3/index.html">03</a><a href="tasarim-4/index.html">Alt.</a></td></tr><tr><th><span class="no">03</span>Hakkında</th><td>Büyük beyan cümlesi ve çizgili dört istatistik.</td><td>Kemik zemin, büyük başlık ve hücreli dört rakam.</td><td>Yosun yeşili panelde kısa beyan ve üzerinde küçük etiketler olan büyük fotoğraf.</td><td>Ortalanmış tek cümle ve üç fotoğraflı mozaik.</td><td class="go"><a href="tasarim-1/index.html">01</a><a href="tasarim-2/index.html">02</a><a href="tasarim-3/index.html">03</a><a href="tasarim-4/index.html">Alt.</a></td></tr><tr><th><span class="no">04</span>İş kolları</th><td>İki büyük fotoğraflı kart; üzerinde alt kategori çipleri.</td><td>Sekmeli yapı: Ofis / Zemin seçilince görsel, kategori listesi ve markalar değişir.</td><td>Pastel iki kart: dekupe sandalyeler ve yuvarlak halı renk örnekleri.</td><td>Yarım ekran iki büyük fotoğraf: Ofis ve Zemin.</td><td class="go"><a href="tasarim-1/index.html">01</a><a href="tasarim-2/index.html">02</a><a href="tasarim-3/index.html">03</a><a href="tasarim-4/index.html">Alt.</a></td></tr><tr><th><span class="no">05</span>Ürün grupları</th><td>Sekiz görsel karo, ürün sayısı etiketi.</td><td>Numaralı liste; satırın üzerine gelince imleçte görsel belirir.</td><td>Renkli, yuvarlak kartlardan yatay kaydırmalı şerit.</td><td>Uzun dikey fotoğraflı ürün grubu şeridi.</td><td class="go"><a href="tasarim-1/index.html">01</a><a href="tasarim-2/index.html">02</a><a href="tasarim-3/index.html">03</a><a href="tasarim-4/index.html">Alt.</a></td></tr><tr><th><span class="no">06</span>Öne çıkan proje</th><td>Koyu bölümde galeri + proje bilgileri tablosu.</td><td>Tam genişlikte fotoğraf, üzerinde bilgi kartı ve küçük görseller.</td><td>Yuvarlatılmış görsel + arduvaz mavisi bilgi kartı, yuvarlak küçük görseller.</td><td>Tam ekran proje fotoğrafı, üzerinde kısa metin.</td><td class="go"><a href="tasarim-1/index.html">01</a><a href="tasarim-2/index.html">02</a><a href="tasarim-3/index.html">03</a><a href="tasarim-4/index.html">Alt.</a></td></tr><tr><th><span class="no">07</span>Projeler</th><td>Sektör ve marka filtreli yatay kaydırmalı şerit.</td><td>Sektör sekmeleri + büyük ilk kartlı ızgara, yazılar görsel üstünde.</td><td>Segmentli sektör filtresi + masonry proje duvarı.</td><td>Sade sektör filtresi + üç sütun büyük proje fotoğrafları.</td><td class="go"><a href="tasarim-1/index.html">01</a><a href="tasarim-2/index.html">02</a><a href="tasarim-3/index.html">03</a><a href="tasarim-4/index.html">Alt.</a></td></tr><tr><th><span class="no">08</span>Markalar</th><td>İki sütunlu marka dizini + Steelcase rozeti.</td><td>Çizgili marka hücreleri; üzerine gelince kırmızıya döner.</td><td>Marka görselli haplar (turuncu halka ofis, yeşil halka zemin).</td><td>Marka fotoğrafları şeridi + Steelcase iş ortaklığı.</td><td class="go"><a href="tasarim-1/index.html">01</a><a href="tasarim-2/index.html">02</a><a href="tasarim-3/index.html">03</a><a href="tasarim-4/index.html">Alt.</a></td></tr><tr><th><span class="no">09</span>Sürdürülebilirlik</th><td>Görsel + metin, iki rakam.</td><td>Dev &quot;378&quot; rakamı, metin ve geniş görsel şeridi.</td><td>Açık sarı panelde dairesel rakamlar ve görsel.</td><td>Tam genişlik fotoğraf üzerinde tek cümle.</td><td class="go"><a href="tasarim-1/index.html">01</a><a href="tasarim-2/index.html">02</a><a href="tasarim-3/index.html">03</a><a href="tasarim-4/index.html">Alt.</a></td></tr><tr><th><span class="no">10</span>Rehber ve blog</th><td>Büyük rehber kartı + yan liste.</td><td>Kırmızı rehber kartı + tarihli satır listesi.</td><td>Yuvarlak kartlar; rehber sarı kartla öne çıkar.</td><td>Üç büyük kapak fotoğraflı yazı.</td><td class="go"><a href="tasarim-1/index.html">01</a><a href="tasarim-2/index.html">02</a><a href="tasarim-3/index.html">03</a><a href="tasarim-4/index.html">Alt.</a></td></tr><tr><th><span class="no">11</span>Teklif formu</th><td>Açık zeminde iletişim satırları + beyaz form kartı.</td><td>Koyu zeminde iletişim satırları + kemik tonlu form kartı, alt çizgili alanlar.</td><td>Üç adımlı teklif sihirbazı (ürün → proje → iletişim).</td><td>Yarısı fotoğraf, yarısı tek adımlı sade form.</td><td class="go"><a href="tasarim-1/index.html">01</a><a href="tasarim-2/index.html">02</a><a href="tasarim-3/index.html">03</a><a href="tasarim-4/index.html">Alt.</a></td></tr><tr><th><span class="no">12</span>Alt bilgi</th><td>Koyu zemin, e-bülten ve dört sütun.</td><td>Dev KLASSİS yazısı, e-bülten ve üç sütun.</td><td>Kum renkli yuvarlak alt bilgi; koyu showroom kartı ve e-bülten.</td><td>Açık gri alt bilgi; showroom fotoğrafı ve e-bülten.</td><td class="go"><a href="tasarim-1/index.html">01</a><a href="tasarim-2/index.html">02</a><a href="tasarim-3/index.html">03</a><a href="tasarim-4/index.html">Alt.</a></td></tr></tbody></table></div>
+  </div></section>
+  <section class="cmp"><div class="wrap">
+    <h2>Sayfa şablonları</h2>
+    <p>Ürün grubu, ürün, proje, marka, rehber ve teklif sayfaları da her öneride ayrı tasarlandı ve aynı adreste açılır.</p>
+    <div class="tbl"><table><thead><tr><th>Şablon</th><th>Tasarım 01</th><th>Tasarım 02</th><th>Tasarım 03</th><th>Alternatif</th><th>Aç</th></tr></thead><tbody><tr><th>Ürün grubu</th><td>Üstte filtre çubuğu, 4 sütun ürün kartı</td><td>Fotoğraf üstünde dev başlık, solda yan filtreler, 3 sütun</td><td>Görselli giriş kartı, arama + segment filtre, özellikler fotoğraflı kartlarda</td><td>Tam genişlik fotoğraflı başlık, açık gri ürün kartları, fotoğraflı özellikler</td><td class="go"><a href="tasarim-1/kategori/karo-hali.html">01</a><a href="tasarim-2/kategori/karo-hali.html">02</a><a href="tasarim-3/kategori/karo-hali.html">03</a><a href="tasarim-4/kategori/karo-hali.html">Alt.</a></td></tr><tr><th>Ürün</th><td>Solda galeri, sağda sabit bilgi paneli ve renk kartelası</td><td>Tam genişlikte görsel şeridi; sekmeli renk/doküman/proje; sağda teklif kutusu</td><td>Solda yapışkan bilgi kartı (yuvarlak renk seçici), sağda büyük görseller</td><td>Büyük galeri ve küçük görseller; sağda sabit bilgi, renk seçici, dokümanlar</td><td class="go"><a href="tasarim-1/urun/composure.html">01</a><a href="tasarim-2/urun/composure.html">02</a><a href="tasarim-3/urun/composure.html">03</a><a href="tasarim-4/urun/composure.html">Alt.</a></td></tr><tr><th>Proje</th><td>Fotoğraf üstünde başlık, yapışkan bilgi tablosu, galeri</td><td>Dev başlık + dört bilgi hücresi, tam görsel, yatay galeri şeridi</td><td>Yuvarlak görsel + üstüne binen başlık kartı, masonry galeri</td><td>Tam ekran kapak, künye satırı, büyük iki sütun galeri</td><td class="go"><a href="tasarim-1/proje/brown-forman.html">01</a><a href="tasarim-2/proje/brown-forman.html">02</a><a href="tasarim-3/proje/brown-forman.html">03</a><a href="tasarim-4/proje/brown-forman.html">Alt.</a></td></tr><tr><th>Marka</th><td>Büyük marka adı, rakamlar, ürün ızgarası</td><td>Ekran boyu marka adı, hücreli bilgiler, yan filtreli ürünler</td><td>Pastel bilgi kartı + büyük marka görseli, kategori hapları</td><td>Tam genişlik marka fotoğrafı, kategori çipleri, ürün ızgarası</td><td class="go"><a href="tasarim-1/marka/interface.html">01</a><a href="tasarim-2/marka/interface.html">02</a><a href="tasarim-3/marka/interface.html">03</a><a href="tasarim-4/marka/interface.html">Alt.</a></td></tr><tr><th>Rehber yazısı</th><td>Ortalanmış başlık, dar metin sütunu</td><td>Görsel üstünde başlık, solda yapışkan künye</td><td>Ortalanmış başlık, yuvarlak kapak, dar metin sütunu</td><td>Kapak fotoğrafı üzerinde başlık, dar ve ferah metin sütunu</td><td class="go"><a href="tasarim-1/blog/karo-hali-mi-lvt-mi.html">01</a><a href="tasarim-2/blog/karo-hali-mi-lvt-mi.html">02</a><a href="tasarim-3/blog/karo-hali-mi-lvt-mi.html">03</a><a href="tasarim-4/blog/karo-hali-mi-lvt-mi.html">Alt.</a></td></tr><tr><th>Teklif</th><td>Adımlar + iletişim + form</td><td>Koyu zeminde adımlar + kemik tonlu form</td><td>Üç adımlı sihirbaz + iletişim kartları</td><td>Fotoğraf yanında tek adımlı form + doğrudan iletişim</td><td class="go"><a href="tasarim-1/teklif.html">01</a><a href="tasarim-2/teklif.html">02</a><a href="tasarim-3/teklif.html">03</a><a href="tasarim-4/teklif.html">Alt.</a></td></tr></tbody></table></div>
+  </div></section>
+</main>
+<footer><div class="wrap">Bu sayfalar tasarım önizlemesidir; formlar gönderim yapmaz. Ürün ve proje içerikleri klassis.com'dan alınmıştır. WhatsApp numarası ve MERSİS bilgisi yayından önce güncellenecektir.</div></footer>
+</body>
+</html>
