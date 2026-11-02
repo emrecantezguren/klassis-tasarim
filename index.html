@@ -14,9 +14,11 @@ body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 system-ui,-app
 a{color:inherit}
 .wrap{max-width:1320px;margin:0 auto;padding:0 clamp(16px,4vw,48px)}
 header{padding:clamp(36px,6vw,80px) 0 clamp(28px,4vw,48px)}
-.top{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:clamp(32px,5vw,64px)}
-.top img{height:34px;width:auto}
-.top span{font-size:13px;color:var(--muted)}
+.top{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:clamp(32px,5vw,64px);flex-wrap:wrap}
+.top .marka{height:34px;width:auto}
+.top .nex{display:inline-flex;align-items:center;gap:12px}
+.top .nex span{font-size:13px;color:var(--muted)}
+.top .nex img{height:clamp(22px,2.4vw,28px);width:auto;display:block}
 h1{font-size:clamp(34px,5vw,64px);line-height:1.02;letter-spacing:-.03em;font-weight:650;margin:0 0 18px;max-width:18ch}
 .intro{font-size:clamp(17px,1.4vw,20px);color:var(--ink2);max-width:62ch;margin:0}
 .how{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:32px}
@@ -65,7 +67,7 @@ footer{padding:28px 0 48px;color:var(--muted);font-size:13px}
 </head>
 <body>
 <header><div class="wrap">
-  <div class="top"><img src="gorseller/logo-klassis.png" alt="Klassis"><span>Hazırlayan: Nex Yazılım · Ekim 2026</span></div>
+  <div class="top"><img class="marka" src="gorseller/logo-klassis.png" alt="Klassis"><div class="nex"><span>Hazırlayan</span><img src="gorseller/nex-logo.svg" alt="NEX Yazılım" width="220" height="68"></div></div>
   <h1>Yeni web sitesi için tasarım önerileri</h1>
   <p class="intro">Üç tasarım önerisi ve bir alternatif tasarım; hepsi klassis.com'daki gerçek içerikle hazırlandı: 203 ürün, 18 ürün grubu, 15 marka, 30 proje ve tüm blog yazıları. Sayfa adresleri ve ana sayfa bölümleri her öneride aynı. Böylece bir öneriyi olduğu gibi seçebilir ya da bölümleri öneriler arasında karıştırabilirsiniz.</p>
   <div class="how">
